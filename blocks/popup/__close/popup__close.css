@@ -4,8 +4,7 @@
     top: -30px;
     right: 5px;
     width: 26px;
-    height: 26px;
-  
+    height: 26px; 
 }
 
 .popup__close:hover{
@@ -15,7 +14,7 @@
 
 @media screen and (min-width: 1280px) {
     .popup__close{
-       width: 40px; 
+       width: 40px;
        height: 40px;
        top: -40px;
        right: -35px;

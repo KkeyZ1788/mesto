@@ -5,8 +5,7 @@
     line-height: 33px;
     margin: 0;
     margin-bottom: 14px;
-    text-align: center;
-    
+    text-align: center; 
 }
 
 @media screen and (min-width: 1280px) {
