@@ -3,4 +3,4 @@
 1. Flex.
 2. JavaScript
 
-Ссылка на сайт:
+Ссылка на сайт:  https://kkeyz1788.github.io/mesto/
