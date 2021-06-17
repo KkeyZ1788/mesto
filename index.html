@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Mesto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body class="page">
+    <div class="page__container">
+        <header class="header">
+
+            <img class="header__logo" src="./images/Vector.png">
+
+        </header>
+        <section >
+            <div class="profile">
+            <img class="profile__avatar" src="./images/profile-img.jpg">
+            <div class="profile__info">
+                
+                    <p class="profile__name">Катя З.<button type="button" class="profile__edit-button"></button></p>
+                    
+                
+                <p class="profile__description">Исследователь океана</p>
+                
+
+            </div>
+
+            <button type="button" class="profile__add-button"></button>
+        </div>
+        </section>
+        <!-- ELEMENTS -->
+        <section class="elements">
+            <div class="elements__item">
+                <img class="elements__img" src="./images/spb.jpg" alt="Санкт-Петербург">
+                <div class="elements__group">
+                    <h2 class="elements__item-name">Санкт-Петербург</h2>
+                    <button type="button" class="elements__button"></button>
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__img" src="./images/la-mansh.jpg" alt="Ла-Манш">
+                <div class="elements__group">
+                    <h2 class="elements__item-name">Ла-Манш</h2>
+                    <button type="button" class="elements__button"></button>
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__img" src="./images/ladoga1.jpg" alt="Малинка">
+                <div class="elements__group">
+                    <h2 class="elements__item-name">Ладога</h2>
+                    <button type="button" class="elements__button"></button>
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__img" src="./images/kamchatka.jpg" alt="Камчатка">
+                <div class="elements__group">
+                    <h2 class="elements__item-name">Камчатка</h2>
+                    <button type="button" class="elements__button"></button>
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__img" src="./images/ladoga.jpg" alt="Ладожское озеро">
+                <div class="elements__group">
+                    <h2 class="elements__item-name">Ладожское озеро</h2>
+                    <button type="button" class="elements__button"></button>
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__img" src="./images/nugush.jpg" alt="Нугуш">
+                <div class="elements__group">
+                    <h2 class="elements__item-name">Нугуш</h2>
+                    <button type="button" class="elements__button"></button>
+                </div>
+            </div>
+            
+
+        </section>
+        <footer class="footer">
+                <p class="footer__text">&copy;2021 Mesto Russia</p>
+
+            </footer>
+            <section class="popup">
+                <div class="popup__container">
+                    <form class="popup__content">
+                        <h2 class="popup__title">Редактировать профиль</h2>
+                        <input type="text" class="popup__form popup__name">
+                        <input type="text" class="popup__form popup__job">
+                        <button type="submit" class="popup__save-button">Сохранить</button>
+                        <div class="popup__close"></div>
+                    </form>
+                </div>
+            </section>
+
+
+
+    </div>
+
+<script src="scripts/script.js"></script>
+</body>
+
+
+</html>
