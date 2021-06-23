@@ -2,12 +2,11 @@
     border: 0;
     border-bottom: 1px solid #bcbcc4;
     width: 238px;
-    height: 27px;
     margin-top: 75px;
     margin-bottom: 30px;
-   margin-left: 22px;
-   margin-right: 22px;
-   padding: 0;
+    margin-left: 22px;
+    margin-right: 22px;
+    padding: 0;
 }
 .popup__form:last-of-type{
     margin-top: 0;
@@ -16,7 +15,6 @@
 @media screen and (min-width: 1280px){
     .popup__form{
         width: 358px;
-        height: 27px;
         margin-left: 36px;
         margin-right: 36px;
         margin-top: 54px;
