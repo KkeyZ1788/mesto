@@ -7,6 +7,12 @@
     margin-left: 22px;
     margin-right: 22px;
     padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
     }
 
 .popup__save-button:hover{
@@ -21,11 +27,9 @@
             margin-top: 18px;
             margin-left: 36px;
             margin-right: 36px;
-            font-style: normal;
-            font-weight: normal;
             font-size: 18px;
             line-height: 22px;
-            text-align: center;
+            
         }
 
     }
