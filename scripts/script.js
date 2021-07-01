@@ -1,8 +1,8 @@
 const popupOpenButton = document.querySelector('.profile__edit-button')
 const popupElement = document.querySelector('.popup')
 const popupCloseButton = popupElement.querySelector('.popup__close')
-let nameInput = popupElement.querySelector('.popup__form_name')
-let jobInput = popupElement.querySelector('.popup__form_job')
+let nameInput = popupElement.querySelector('.popup__form_type_name')
+let jobInput = popupElement.querySelector('.popup__form_type_job')
 let profileName = document.querySelector ('.profile__name')
 let profileDescription = document.querySelector ('.profile__description')
 const formElement = popupElement.querySelector('.popup__content')
@@ -22,7 +22,6 @@ const closePopup = function(){
 
 // ф-я закрытия попап кликом на фон
 const closePopupByClickOnOverlay = function(event) {
-    console.log(event.target, event.currentTarget)
     if (event.target !== event.currentTarget) {
       return
     }
