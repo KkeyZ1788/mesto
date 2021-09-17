@@ -23,7 +23,7 @@
                         </div>
                         <button type="button" aria-label="Добавить" class="profile__add-button"></button>
                 </section>
-                <!-- ELEMENTS -->
+                <!-- ELEMENTS
                 <section class="elements">
                     <article class="elements__item">
                         <img class="elements__img" src="./images/spb.jpg" alt="Санкт-Петербург" />
@@ -67,7 +67,8 @@
                             <button type="button" class="elements__button"></button>
                         </div>
                     </article>
-                </section>
+                </section> -->
+                <section class="elements"></section>
             </main>
             <footer class="footer">
                 <p class="footer__text">&copy;2021 Mesto Russia</p>
@@ -76,14 +77,43 @@
                 <div class="popup__container">
                     <form name="Edit-form" class="popup__content">
                         <h2 class="popup__title">Редактировать профиль</h2>
-                        <input type="text" class="popup__form popup__form_type_name" />
+                         <input type="text" class="popup__form popup__form_type_name" />
                         <input type="text" class="popup__form popup__form_type_job" />
                         <button type="submit" class="popup__save-button">Сохранить</button>
                         <button type="button" class="popup__close"></button>
                     </form>
                 </div>
             </div>
-        </section> 
+            <div class="add_newCard popup">
+                <div class="popup__container">
+                    <form name="Edit-form" class="popup__content add__form">
+                        <h2 class="popup__title">Новое место</h2>
+                        <input type="text" placeholder='Название' class="popup__form popup__form_type_add-name" />
+                        <input type="text" placeholder='Ссылка на картинку' class="popup__form popup__form_type_add-link" />
+                        <button type="submit" class="popup__save-button add__card">Создать</button>
+                        <button type="button" class="popup__close"></button>
+                    </form>
+                </div>
+            </div> 
+            <div class="popup popup_type_image">
+                <div class="popup__content">
+                    <button type="button" class="popup__close-image"></button>
+                    <img class="popup__image">
+                    <p class="popup__image-name"></p>
+                </div>
+
+            </div>
+        </section>  
+        <template id = 'post-template'>
+            <article class="elements__item">
+                <button class="delete"></button>
+                <img class="elements__img" src="" alt="" />
+                <div class="elements__group">
+                    <h2 class="elements__item-name"></h2>
+                    <button type="button" class="elements__like-button"></button>
+                </div>
+            </article>  
+        </template>
         <script src="scripts/script.js"></script>
     </body>
 </html>

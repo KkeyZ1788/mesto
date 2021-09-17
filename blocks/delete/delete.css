@@ -1,0 +1,17 @@
+.delete{
+    width: 18px;
+    height: 19.3px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-image: url(../../images/Trash.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    background-color:transparent;
+}
+
+.delete:hover{
+    opacity: 0.6;
+    cursor: pointer; 
+}

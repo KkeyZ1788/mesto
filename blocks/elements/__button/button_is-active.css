@@ -1,0 +1,10 @@
+.button_is-active{
+    background-image: url(../../../images/Active_like.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 22px;
+    height: 19px;
+    border: none;
+    background-color: #fff;
+    margin-left:auto;
+}
