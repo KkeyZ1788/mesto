@@ -86,10 +86,10 @@ const imagePopupElement = imagePopup.querySelector('.popup__image') // карт�
 const imageName = imagePopup.querySelector('.popup__image-name') // подпись картинки в попапе
 const imagePopupCloseButton = imagePopup.querySelector('.popup__close-image')// крестик в попапе с картинкой
 
-const addCardPopUp = document.querySelector('.add_newCard') // попап добавления карточки
-const addForm = addCardPopUp.querySelector('.add__form'); // переменная формы добавления карточки
+const addCardPopUp = document.querySelector('.addNewCard') // попап добавления карточки
+const addForm = addCardPopUp.querySelector('.add-form'); // переменная формы добавления карточки
 const addNewCardButton = document.querySelector('.profile__add-button') // кнопка плюсик
-const addCardButton = addForm.querySelector('.add__card');// кнопка создать
+const addCardButton = addForm.querySelector('.add-card');// кнопка создать
 const addFormCloseButton = addForm.querySelector('.popup__close'); // крестик
 const cardName = addForm.querySelector('.popup__form_type_add-name');
 const cardLink = addForm.querySelector('.popup__form_type_add-link');
