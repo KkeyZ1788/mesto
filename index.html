@@ -23,68 +23,24 @@
                         </div>
                         <button type="button" aria-label="Добавить" class="profile__add-button"></button>
                 </section>
-                <!-- ELEMENTS
-                <section class="elements">
-                    <article class="elements__item">
-                        <img class="elements__img" src="./images/spb.jpg" alt="Санкт-Петербург" />
-                        <div class="elements__group">
-                            <h2 class="elements__item-name">Санкт-Петербург</h2>
-                            <button type="button" class="elements__button"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img class="elements__img" src="./images/la-mansh.jpg" alt="Ла-Манш" />
-                        <div class="elements__group">
-                            <h2 class="elements__item-name">Ла-Манш</h2>
-                            <button type="button" class="elements__button"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img class="elements__img" src="./images/ladoga1.jpg" alt="Малинка" />
-                        <div class="elements__group">
-                            <h2 class="elements__item-name">Ладога</h2>
-                            <button type="button" class="elements__button"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img class="elements__img" src="./images/kamchatka.jpg" alt="Камчатка" />
-                        <div class="elements__group">
-                            <h2 class="elements__item-name">Камчатка</h2>
-                            <button type="button" class="elements__button"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img class="elements__img" src="./images/ladoga.jpg" alt="Ладожское озеро" />
-                        <div class="elements__group">
-                            <h2 class="elements__item-name">Ладожское озеро</h2>
-                            <button type="button" class="elements__button"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img class="elements__img" src="./images/nugush.jpg" alt="Нугуш" />
-                        <div class="elements__group">
-                            <h2 class="elements__item-name">Нугуш</h2>
-                            <button type="button" class="elements__button"></button>
-                        </div>
-                    </article>
-                </section> -->
+               
                 <section class="elements"></section>
             </main>
             <footer class="footer">
                 <p class="footer__text">&copy;2021 Mesto Russia</p>
             </footer>
-            <div class="popup">
+            <div class="popup popup_edit-profile">
                 <div class="popup__container">
                     <form name="Edit-form" class="popup__content">
                         <h2 class="popup__title">Редактировать профиль</h2>
-                         <input type="text" class="popup__form popup__form_type_name" />
-                        <input type="text" class="popup__form popup__form_type_job" />
+                         <input type="text" placeholder="Имя"   class="popup__form popup__form_type_name" />
+                        <input type="text" placeholder="Вид деятельности" class="popup__form popup__form_type_job" />
                         <button type="submit" class="popup__save-button">Сохранить</button>
                         <button type="button" class="popup__close"></button>
                     </form>
                 </div>
             </div>
-            <div class="popup addNewCard">
+            <div class="popup popup_add-card">
                 <div class="popup__container">
                     <form name="Edit-form" class="add-form">
                         <h2 class="popup__title">Новое место</h2>
@@ -114,6 +70,7 @@
                 </div>
             </article>  
         </template>
+        <script src="scripts/initial-cards.js"></script> 
         <script src="scripts/script.js"></script>
     </body>
 </html>
