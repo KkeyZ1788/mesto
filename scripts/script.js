@@ -7,9 +7,7 @@ const  profileName = document.querySelector ('.profile__name')
 const  profileDescription = document.querySelector ('.profile__description')
 const formEditProfile = popupElement.querySelector('.popup__content')
 
-const popupToggle = function(popup){
-  popup.classList.toggle('popup_is-opened')
-}
+
 
 // функция открытия попап
 const openPopup = function (popup){
@@ -72,7 +70,7 @@ const postTemlate = document.querySelector('#post-template').content;
 const imagePopup = document.querySelector('.popup_type_image') // Попап с картинкой
 const imagePopupElement = imagePopup.querySelector('.popup__image') // картинка в попапе
 const imageName = imagePopup.querySelector('.popup__image-name') // подпись картинки в попапе
-const imagePopupCloseButton = imagePopup.querySelector('.popup__close-image')// крестик в попапе с картинкой
+const imagePopupCloseButton = imagePopup.querySelector('.popup__close')// крестик в попапе с картинкой
 
 const addCardPopUp = document.querySelector('.popup_add-card') // попап добавления карточки
 const formAddCard = addCardPopUp.querySelector('.add-form'); // переменная формы добавления карточки
@@ -98,8 +96,8 @@ const openImagePopup = function (event) {
   openPopup(imagePopup);
   const item = event.target;
   imagePopupElement.src = item.src;
-  imageName.textContent = item.closest('.elements__item').querySelector('.elements__item-name').textContent;
-  imagePopupElement.alt = imageName.textContent;
+  imageName.textContent = item.alt;
+  imagePopupElement.alt = item.alt;
 
 }
 
@@ -136,12 +134,12 @@ initialCards.forEach(card => cardContainer.prepend(createCard(card)));
 
 // Открытие формы для добавления карточки
 const openAddForm = function(){
-  addCardPopUp.classList.add('popup_is-opened');
+  openPopup(addCardPopUp);
 };
 
 // Закрытие формы для добавления карточки
 const closeAddForm = function(){
-  addCardPopUp.classList.remove('popup_is-opened');
+  closePopup(addCardPopUp);
   cardName.value = "";
   cardLink.value ="";
 
