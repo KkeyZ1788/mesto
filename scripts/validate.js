@@ -93,6 +93,6 @@ const checkInputValidity = (formElement, inputElement) => {
     inputSelector: '.popup__form',
     submitButtonSelector: '.popup__save-button',
     inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
+    inputErrorClass: 'form__input_type_error',
     errorClass: 'popup__error_visible'
 });
