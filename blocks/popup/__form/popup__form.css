@@ -2,27 +2,29 @@
     border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     width: 238px;
-    margin-top: 75px;
-    margin-bottom: 30px;
-    margin-left: 22px;
-    margin-right: 22px;
+    /*margin-top: 75px;  */
+    /* margin-bottom: 30px; */
+    /* margin-left: 22px;
+    margin-right: 22px; */
     padding: 0;
     padding-bottom: 13px;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    color: #000000;
+    /* color: #000000; */
 }
 .popup__form:last-of-type{
     margin-top: 0;
 }
+input:focus{outline: none;
+border-bottom: 1px solid rgba(0, 0, 0, 0.2);}
 
 @media screen and (min-width: 1280px){
     .popup__form{
         width: 358px;
-        margin-left: 36px;
-        margin-right: 36px;
+        /* margin-left: 36px;
+        margin-right: 36px; */
         margin-top: 54px;   
     }
 }

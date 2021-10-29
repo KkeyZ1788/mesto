@@ -1,3 +1,5 @@
+// ПЕРЕМЕННЫЕ
+
 const popupOpenButton = document.querySelector('.profile__edit-button')
 const popupElement = document.querySelector('.popup_edit-profile')
 const popupCloseButton = popupElement.querySelector('.popup__close')
@@ -6,8 +8,22 @@ const  jobInput = popupElement.querySelector('.popup__form_type_job')
 const  profileName = document.querySelector ('.profile__name')
 const  profileDescription = document.querySelector ('.profile__description')
 const formEditProfile = popupElement.querySelector('.popup__content')
+const cardContainer = document.querySelector('.elements') // переменная с секцией, куда будут добавляться карточки
+const postTemlate = document.querySelector('#post-template').content; 
+const imagePopup = document.querySelector('.popup_type_image') // Попап с картинкой
+const imagePopupElement = imagePopup.querySelector('.popup__image') // картинка в попапе
+const imageName = imagePopup.querySelector('.popup__image-name') // подпись картинки в попапе
+const imagePopupCloseButton = imagePopup.querySelector('.popup__close')// крестик в попапе с картинкой
+const addCardPopUp = document.querySelector('.popup_add-card') // попап добавления карточки
+const formAddCard = addCardPopUp.querySelector('.add-form'); // переменная формы добавления карточки
+const addNewCardButton = document.querySelector('.profile__add-button') // кнопка плюсик
+const addCardButton = formAddCard.querySelector('.add-card');// кнопка создать
+const formAddCardCloseButton = formAddCard.querySelector('.popup__close'); // крестик
+const cardName = formAddCard.querySelector('.popup__form_type_add-name');
+const cardLink = formAddCard.querySelector('.popup__form_type_add-link');
 
 
+// ФУНКЦИИ
 
 // функция открытия попап
 const openPopup = function (popup){
@@ -28,22 +44,37 @@ const openProfilePopup = function(){
     jobInput.value = profileDescription.textContent
 }
 
-const closeProfilePopup = function() {
+const closeProfilePopup = function() { // функция закрытия попап редактирования профиля
   closePopup(popupElement);
 }
 
 
 
 
-// ф-я закрытия попап кликом на фон
+// ф-я закрытия попап кликом редактирования профиля на фон
 const closePopupByClickOnOverlay = function(event) {
-    if (event.target !== event.currentTarget) {
+  const popups = Array.from(document.querySelectorAll('.popup'))
+  if (event.target !== event.currentTarget)  {
       return
+    }  else {
+      popups.forEach(function(popup){
+        closePopup(popup) 
+      }); 
+  }
+}
+  // закрытие попапа на esc
+
+  const escHandler = (evt) => {
+    const popups = Array.from(document.querySelectorAll('.popup'))
+    if (evt.key === 'Escape'){
+      popups.forEach(function(popup){
+        closePopup(popup) 
+      }); 
     }
-  
-    closePopup(popupElement)
   }
 
+  
+  
 // ф-я редактирования профиля, ч/з формы в
 const formEditProfileSubmitHandler = function(evt){
     evt.preventDefault()
@@ -55,30 +86,10 @@ const formEditProfileSubmitHandler = function(evt){
 popupOpenButton.addEventListener('click', openProfilePopup)
 popupCloseButton.addEventListener('click', closeProfilePopup)
 popupElement.addEventListener('click', closePopupByClickOnOverlay)
+document.addEventListener('keydown', escHandler)
 formEditProfile.addEventListener('submit', formEditProfileSubmitHandler)
 
 
-// ПР 6
-
-
-
-
-
-// Переменные
-const cardContainer = document.querySelector('.elements') // переменная с секцией, куда будут добавляться карточки
-const postTemlate = document.querySelector('#post-template').content; 
-const imagePopup = document.querySelector('.popup_type_image') // Попап с картинкой
-const imagePopupElement = imagePopup.querySelector('.popup__image') // картинка в попапе
-const imageName = imagePopup.querySelector('.popup__image-name') // подпись картинки в попапе
-const imagePopupCloseButton = imagePopup.querySelector('.popup__close')// крестик в попапе с картинкой
-
-const addCardPopUp = document.querySelector('.popup_add-card') // попап добавления карточки
-const formAddCard = addCardPopUp.querySelector('.add-form'); // переменная формы добавления карточки
-const addNewCardButton = document.querySelector('.profile__add-button') // кнопка плюсик
-const addCardButton = formAddCard.querySelector('.add-card');// кнопка создать
-const formAddCardCloseButton = formAddCard.querySelector('.popup__close'); // крестик
-const cardName = formAddCard.querySelector('.popup__form_type_add-name');
-const cardLink = formAddCard.querySelector('.popup__form_type_add-link');
 
 //удаление карточки
 
@@ -105,6 +116,7 @@ const openImagePopup = function (event) {
 const  closeImagePopup = function (){
   closePopup (imagePopup)
 }
+
 
 
 
@@ -145,6 +157,8 @@ const closeAddForm = function(){
 
 };
 
+
+
 // Создание карточки из формы
 const addCardFromHandler = function(evt) {
   evt.preventDefault();
@@ -164,9 +178,13 @@ const addCardFromHandler = function(evt) {
 // Слушатели
 addNewCardButton.addEventListener('click', openAddForm);
 formAddCardCloseButton.addEventListener('click', closeAddForm);
+addCardPopUp.addEventListener('click', closePopupByClickOnOverlay);
 formAddCard.addEventListener('submit', addCardFromHandler);
-imagePopupCloseButton.addEventListener('click', closeImagePopup)
-
-
-
+imagePopupCloseButton.addEventListener('click', closeImagePopup);
+imagePopup.addEventListener('click', closePopupByClickOnOverlay);
+popupOpenButton.addEventListener('click', openProfilePopup)
+popupCloseButton.addEventListener('click', closeProfilePopup)
+popupElement.addEventListener('click', closePopupByClickOnOverlay)
+document.addEventListener('keydown', escHandler)
+formEditProfile.addEventListener('submit', formEditProfileSubmitHandler)
 
