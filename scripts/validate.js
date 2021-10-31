@@ -1,47 +1,42 @@
 
 // Показать сообщение об ошибке
 
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement, errorMessage, config) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.add('form__input_type_error');
+    inputElement.classList.add(config.inputErrorClass);
     errorElement.textContent = errorMessage;
 
   };
 
 // Убрать сообщение об ошибке 
 
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement,config) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove('form__input_type_error');
+    inputElement.classList.remove(config.inputErrorClass);
     errorElement.textContent = '';
   };
 
-//   сделать кнопку неактивной 
 
-function setSubmitButtonInactive( ){
-    submitButton.setAttribute('disabled', true);
-    submitButton.classList.add('input__btn_disabled');   
-};
 
 // Проверка инпутов 
-const checkInputValidity = (formElement, inputElement) => {
+const checkInputValidity = (formElement, inputElement, config) => {
     if (!inputElement.validity.valid) {
-      showInputError(formElement, inputElement, inputElement.validationMessage);
+      showInputError(formElement, inputElement, inputElement.validationMessage, config);
     } else {
-      hideInputError(formElement, inputElement);
+      hideInputError(formElement, inputElement, config);
     }
   };
 
   
   // Добавление проверки всем полям
-  const chekInputs = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll('.popup__form'));
-    const buttonElement = formElement.querySelector('.popup__save-button');
-    toggleButtonState(inputList, buttonElement);
+  const chekInputs = (formElement,config) => {
+    const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+    const buttonElement = formElement.querySelector(config.submitButtonSelector);
+    toggleButtonState(inputList, buttonElement, config);
     inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', function () {
-        checkInputValidity(formElement, inputElement);
-        toggleButtonState(inputList, buttonElement);
+        checkInputValidity(formElement, inputElement, config);
+        toggleButtonState(inputList, buttonElement, config);
 
       });
     });
@@ -55,12 +50,12 @@ const checkInputValidity = (formElement, inputElement) => {
     });
    }
 
-   const toggleButtonState = (inputList, buttonElement) => {
+   const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
-  buttonElement.classList.add('popup__button_disabled');
+  buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.setAttribute('disabled', true);
 } else {
-  buttonElement.classList.remove('popup__button_disabled');
+  buttonElement.classList.remove(config.inactiveButtonClass);
   buttonElement.removeAttribute('disabled');
 };
 };
@@ -69,8 +64,8 @@ const checkInputValidity = (formElement, inputElement) => {
 
 
   //  добавление проверки формам
-  const enableValidation = () =>{
-    const forms = Array.from(document.querySelectorAll('.form'));
+  const enableValidation = (config) =>{
+    const forms = Array.from(document.querySelectorAll(config.formSelector));
     forms.forEach((form) => {
       form.addEventListener('submit', function (evt) {
         evt.preventDefault();
@@ -78,7 +73,7 @@ const checkInputValidity = (formElement, inputElement) => {
 
 
   
-      chekInputs(form);
+      chekInputs(form, config);
 
 
     });

@@ -27,12 +27,14 @@ const cardLink = formAddCard.querySelector('.popup__form_type_add-link');
 
 // функция открытия попап
 const openPopup = function (popup){
-popup.classList.add('popup_is-opened')
+popup.classList.add('popup_is-opened');
+document.addEventListener('keydown', escHandler)
 }
 
 // функция закрытия попап
 const closePopup = function(popup){
-  popup.classList.remove('popup_is-opened')
+  popup.classList.remove('popup_is-opened');
+  document.removeEventListener('keydown', escHandler)
 }
 
 
@@ -46,6 +48,7 @@ const openProfilePopup = function(){
 
 const closeProfilePopup = function() { // функция закрытия попап редактирования профиля
   closePopup(popupElement);
+  
 }
 
 
@@ -53,25 +56,19 @@ const closeProfilePopup = function() { // функция закрытия поп
 
 // ф-я закрытия попап кликом редактирования профиля на фон
 const closePopupByClickOnOverlay = function(event) {
-  const popups = Array.from(document.querySelectorAll('.popup'))
-  if (event.target !== event.currentTarget)  {
-      return
-    }  else {
-      popups.forEach(function(popup){
-        closePopup(popup) 
-      }); 
+  if (event.target.classList.contains('popup')) {
+      const openedPopup = document.querySelector('.popup_is-opened');
+      closePopup(openedPopup);
   }
 }
   // закрытие попапа на esc
 
   const escHandler = (evt) => {
-    const popups = Array.from(document.querySelectorAll('.popup'))
     if (evt.key === 'Escape'){
-      popups.forEach(function(popup){
-        closePopup(popup) 
-      }); 
+        const openedPopup = document.querySelector('.popup_is-opened');
+        closePopup(openedPopup);
     }
-  }
+} 
 
   
   
@@ -83,11 +80,11 @@ const formEditProfileSubmitHandler = function(evt){
     closePopup(popupElement)
   }
 
-popupOpenButton.addEventListener('click', openProfilePopup)
-popupCloseButton.addEventListener('click', closeProfilePopup)
-popupElement.addEventListener('click', closePopupByClickOnOverlay)
-document.addEventListener('keydown', escHandler)
-formEditProfile.addEventListener('submit', formEditProfileSubmitHandler)
+
+
+
+
+
 
 
 
@@ -154,7 +151,7 @@ const closeAddForm = function(){
   closePopup(addCardPopUp);
   cardName.value = "";
   cardLink.value ="";
-
+  
 };
 
 
@@ -170,6 +167,11 @@ const addCardFromHandler = function(evt) {
  
   cardContainer.prepend(newCard);
   closeAddForm()
+  const form = document.querySelector('.add-form');
+  const submitButton = form.querySelector('.add-card');
+  submitButton.classList.add('popup__button_disabled');
+  submitButton.setAttribute('disabled', true);
+  
 }
 
 
@@ -178,13 +180,12 @@ const addCardFromHandler = function(evt) {
 // Слушатели
 addNewCardButton.addEventListener('click', openAddForm);
 formAddCardCloseButton.addEventListener('click', closeAddForm);
-addCardPopUp.addEventListener('click', closePopupByClickOnOverlay);
+addCardPopUp.addEventListener('mousedown', closePopupByClickOnOverlay);
 formAddCard.addEventListener('submit', addCardFromHandler);
 imagePopupCloseButton.addEventListener('click', closeImagePopup);
-imagePopup.addEventListener('click', closePopupByClickOnOverlay);
+imagePopup.addEventListener('mousedown', closePopupByClickOnOverlay);
 popupOpenButton.addEventListener('click', openProfilePopup)
 popupCloseButton.addEventListener('click', closeProfilePopup)
-popupElement.addEventListener('click', closePopupByClickOnOverlay)
-document.addEventListener('keydown', escHandler)
+popupElement.addEventListener('mousedown', closePopupByClickOnOverlay)
 formEditProfile.addEventListener('submit', formEditProfileSubmitHandler)
-
+popupCloseButton.addEventListener('click', closeProfilePopup)
