@@ -21,7 +21,7 @@ const addCardButton = formAddCard.querySelector('.add-card');// кнопка с�
 const formAddCardCloseButton = formAddCard.querySelector('.popup__close'); // крестик
 const cardName = formAddCard.querySelector('.popup__form_type_add-name');
 const cardLink = formAddCard.querySelector('.popup__form_type_add-link');
-
+const submitButton = formAddCard.querySelector('.add-card'); 
 
 // ФУНКЦИИ
 
@@ -167,8 +167,7 @@ const addCardFromHandler = function(evt) {
  
   cardContainer.prepend(newCard);
   closeAddForm()
-  const form = document.querySelector('.add-form');
-  const submitButton = form.querySelector('.add-card');
+  
   submitButton.classList.add('popup__button_disabled');
   submitButton.setAttribute('disabled', true);
   
