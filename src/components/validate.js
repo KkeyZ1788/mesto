@@ -60,9 +60,6 @@ const checkInputValidity = (formElement, inputElement, config) => {
 };
 };
 
-
-
-
   //  добавление проверки формам
   const enableValidation = (config) =>{
     const forms = Array.from(document.querySelectorAll(config.formSelector));
@@ -70,24 +67,11 @@ const checkInputValidity = (formElement, inputElement, config) => {
       form.addEventListener('submit', function (evt) {
         evt.preventDefault();
       });
-
-
-  
       chekInputs(form, config);
-
-
     });
   };    
 
-  
+ export{enableValidation} 
 
 
 
-  enableValidation ( {
-    formSelector: '.form',
-    inputSelector: '.popup__form',
-    submitButtonSelector: '.popup__save-button',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'form__input_type_error',
-    errorClass: 'popup__error_visible'
-});
